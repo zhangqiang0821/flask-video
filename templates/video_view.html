@@ -1,0 +1,25 @@
+<!--filename:video_view.html-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>上传视频 | 正心的视频播放网站</title>
+    <link rel="stylesheet" href="/static/css/layui.css">
+    <style>
+        .title {
+            margin-top: 100px;
+            text-align: center;
+            font-size: 52px;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-container">
+    <h2 class="title">视频观看</h2>
+    <video style="max-width: 100%;" controls="controls" poster="{{ url }}">
+        <source src="{{ url }}" type="video/mp4"/>
+    </video>
+</div>
+<script src="/static/layui.js"></script>
+</body>
+</html>
