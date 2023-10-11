@@ -10,7 +10,13 @@ db = SQLAlchemy()
 # 创建应用程序 app
 app = Flask(__name__)
 # 配置 SQLite 数据库, 默认存放在 app instance 文件夹下
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///flask-video.db"
+current_directory = os.path.dirname(os.path.abspath(__file__))
+print(current_directory)
+os.system("mkdir -p  static/upload/video")
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///{}/instance/flask-video.db".format(current_directory)
+
+
+# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///flask-video.db"
 # 图片默认的上传地址
 app.config["UPLOAD_FOLDER"] = 'static/upload/video'
 # 将拓展插件对象绑定到程序实例
